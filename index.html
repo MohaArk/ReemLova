@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>إلى شخص مميز ❤️</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#09090d;color:#fff;overflow-x:hidden}
+.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative}
+.bg{position:fixed;inset:0;background:radial-gradient(circle at 50% 25%,#35152a 0,#120d16 38%,#07070a 80%);z-index:-2}
+.heart{position:fixed;font-size:20px;opacity:.18;animation:float 8s linear infinite;z-index:-1}
+@keyframes float{from{transform:translateY(110vh) rotate(0)}to{transform:translateY(-15vh) rotate(360deg)}}
+.card{width:min(680px,100%);padding:42px 25px;border:1px solid #ffffff18;border-radius:28px;background:#ffffff08;backdrop-filter:blur(14px);box-shadow:0 20px 70px #0008;text-align:center}
+.small{color:#d8a9bf;letter-spacing:2px;font-size:13px}.title{font-size:clamp(34px,8vw,62px);margin:18px 0 12px}.sub{font-size:17px;line-height:2;color:#ddd}
+button{border:0;border-radius:999px;padding:14px 27px;background:#fff;color:#171018;font-size:16px;font-weight:bold;cursor:pointer;margin-top:18px;transition:.25s}
+button:hover{transform:scale(1.04)}
+.hidden{display:none}.message{font-size:20px;line-height:2.1;color:#f5e8ee;margin:24px auto;max-width:560px}
+.quote{margin:25px 0;padding:20px;border-right:3px solid #d98bab;color:#e7c8d5;line-height:2}
+.final{font-size:25px;line-height:1.8}.signature{margin-top:25px;color:#cfa4b8}
+.fade{animation:fade .8s ease}@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="page">
+<div class="card fade" id="intro">
+  <div class="small">رسالة صغيرة… بس من القلب</div>
+  <div class="title">إلى شخص مميز ❤️</div>
+  <div class="sub">ما أدري إذا تتوقعين شنو ورا هذا الزر…<br>بس أتمنى تفتحينه للآخر.</div>
+  <button onclick="openLetter()">افتحي المفاجأة ✨</button>
+</div>
+
+<div class="card hidden fade" id="letter">
+  <div class="small">مو كل التعارفات تكون عابرة</div>
+  <div class="message">
+    من يوم عرفـتج، صار عندي شعور غريب وحلو بنفس الوقت.<br>
+    يمكن بعدنا ببداية الطريق، ويمكن ما أعرف شنو راح يصير بينا،
+    بس أعرف شي واحد…
+  </div>
+  <div class="quote">وجودج دخل حياتي بطريقة ما كنت مخطط إلها،<br>بس بصراحة… ما أريدها تطلع منها. ❤️</div>
+  <div class="message">
+    ما أريد أستعجل أي شي، ولا أريد أحط كلام أكبر من وقته.<br>
+    بس حبيت تعرفين إنج صرتِ شخص يهمني،
+    وأحب كل لحظة أتعرف بيها عليج أكثر.
+  </div>
+  <button onclick="showFinal()">عندي آخر شي… 🤍</button>
+</div>
+
+<div class="card hidden fade" id="final">
+  <div class="small">والآن الحقيقة</div>
+  <div class="final">
+    يمكن المفاجأة مجرد صفحة على شاشة…<br>
+    بس الشعور اللي وراها حقيقي. ❤️<br><br>
+    <b>فرحان لأنّي عرفـتج.</b>
+  </div>
+  <div class="signature">— من شخص بدأ يحب وجودج أكثر مما توقع</div>
+</div>
+</div>
+<script>
+function openLetter(){
+ document.getElementById('intro').classList.add('hidden');
+ document.getElementById('letter').classList.remove('hidden');
+ burst();
+}
+function showFinal(){
+ document.getElementById('letter').classList.add('hidden');
+ document.getElementById('final').classList.remove('hidden');
+ burst();
+}
+function burst(){
+ for(let i=0;i<16;i++){
+  let h=document.createElement('div');h.className='heart';h.textContent='❤';
+  h.style.left=Math.random()*100+'vw';h.style.animationDuration=(4+Math.random()*6)+'s';
+  document.body.appendChild(h);setTimeout(()=>h.remove(),9000);
+ }
+}
+</script>
+</body>
+</html>
